@@ -1,0 +1,237 @@
+﻿<!Doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>الشحن</title>
+    <!-- css files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/datatables.css" type="text/css" />
+    <link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/img/whiteLogo.png" rel="icon">
+
+</head>
+<body>
+    <!-- header starts -->
+    <div class="header">
+        <div class="container">
+            <img class="logo" src="assets/img/whiteLogo.png">
+            <div class="right-side">
+                <span class="main-span hidden-xs hidden-sm">رقم الموبايل: <span>1134567</span></span>
+                <span class="main-span balance"> الرصيد المتاح: <span>1000 شيكل</span></span>
+                <span class="main-span balance hidden-xs hidden-sm"> الرصيد المطلوب: <span>1000 شيكل</span></span>
+            </div>
+            <div class="left-side">
+                <a href="##" class="sign-out">خروج</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- header ends -->
+    <!--navbar starts -->
+    <div class="navbar navbar-static-top">
+        <div class="container">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollpase">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse navHeaderCollpase">
+                <ul class="nav navbar-nav navbar-right">
+                    <div class="charge  col-md-3 col-sm-6 col-xs-12">
+                        <li class="">
+                            <a href="network.html">
+                                الشبكات
+                                <div class="circle-icon  network-icon"></div>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="charge col-md-3 col-sm-6 col-xs-12">
+                        <li class="">
+                            <a href="network_charge.html">
+                                شحن/سحب رصيد
+                                <div class="circle-icon  main-icon"></div>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="account col-md-3 col-sm-6 col-xs-12">
+                        <li>
+                            <a href="network_voucher.html">
+                                سندات القبض
+                                <div class="circle-icon  doller-icon"></div>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="moves active col-md-3 col-sm-6 col-xs-12">
+                        <li class="active">
+                            <a href="network_moves.html">
+                                الحركات
+                                <div class="circle-icon  moves-icon"></div>
+                            </a>
+                        </li>
+                    </div>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--navbar ends -->
+    <!-- main block starts -->
+    <div class="container">
+        <div class="white-block col-md-12 col-xs-12 col-sm-12">
+            <div class="row">
+                <div class="container">
+                    <div class="filter">
+                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                            <div class="label-container col-md-1 col-sm-4 col-xs-5 right-float">
+                                <label>      اسم الشبكة </label>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 right-float" style="margin-right:3em">
+                                <select class="form-control user_type">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                            <div class="label-container col-md-1 col-sm-4 col-xs-5 right-float">
+                                <label>     نوع الحركة </label>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 right-float" style="margin-right:3em">
+                                <select class="form-control user_type">
+                                    <option value="1">شحن</option>
+                                    <option value="2">سحب</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                            <div class="label-container col-md-1 col-sm-4 col-xs-5 right-float">
+                                <label>     تاريخ الحركة </label>
+                            </div>
+                            <div class="label-container right-float">
+                                <label class="col-md-1">   من </label>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                    <input type="text" class="form-control" placeholder="dd.mm.yyyy">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="label-container right-float">
+                                <label class="col-md-1">   إلى </label>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                    <input type="text" class="form-control" placeholder="dd.mm.yyyy">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-1 col-sm-12 col-xs-12 right-float">
+                                <button class="search-btn">بحث</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <hr />
+                    <div class="col-md-12 ">
+                        <div class=" move_table">
+                            <table class="table table-striped table-hover table-bordered  table-checkable  moves_table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            التاريخ /الوقت
+                                        </th>
+                                        <th>
+                                            اسم المشترك
+                                        </th>
+                                        <th>
+                                            الرصيد
+                                        </th>
+                                        <th> العمولة</th>
+                                        <th>
+                                            نوع الحركة
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="">
+                                            13/5/2015 <br>
+                                            12:00 PM
+                                        </td>
+                                        <td>
+                                            محمد سعيد
+                                        </td>
+
+                                        <td>
+                                            50 شيكل
+                                        </td>
+                                        <td> 50% </td>
+                                        <td>
+                                            شحن
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            13/5/2015 <br>
+                                            12:00 PM
+                                        </td>
+                                        <td>
+                                            محمد سعيد
+                                        </td>
+
+                                        <td>
+                                            150 شيكل
+                                        </td>
+                                        <td> 20%</td>
+                                        <td>
+                                            شحن
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- END SAMPLE TABLE PORTLET-->
+            </div>
+
+
+        </div>
+    </div>
+    <!-- main block ends -->
+    <div class="footer">
+        <div class="container">All right reserved. Copyright &copy; 2015</div>
+    </div>
+
+    <!-- js files -->
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="assets/js/datatables.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+    <script>
+        $('.input-group.date').datepicker({
+            format: "dd.mm.yyyy",
+            autoclose: true
+        });
+
+        $(document).ready(function () {
+            $('.moves_table').DataTable();
+        });
+    </script>
+
+    
+</body>
+  
+</html>

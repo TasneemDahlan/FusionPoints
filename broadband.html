@@ -1,0 +1,178 @@
+﻿<!Doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>الشحن</title>
+        <!-- css files -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/reset.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/sweetalert2.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="assets/img/whiteLogo.png" rel="icon">
+        
+    </head>
+    <body>
+        <!-- header starts -->
+        <div class="header">
+            <div class="container">
+                <img class="logo" src="assets/img/whiteLogo.png">
+                <div class="right-side">
+                    <span class="main-span hidden-xs hidden-sm">رقم الموبايل: <span>1134567</span></span>
+                    <span class="main-span balance"> الرصيد المتاح: <span>1000 شيكل</span></span>
+                    <span class="main-span balance hidden-xs hidden-sm"> الرصيد المطلوب: <span>1000 شيكل</span></span>
+                </div>
+                <div class="left-side">
+                    <a href="##" class="sign-out">خروج</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- header ends -->
+        <!--navbar starts -->
+        <div class="navbar navbar-static-top">
+            <div class="container">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollpase">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse navHeaderCollpase">
+                    <ul class="nav navbar-nav navbar-right">
+                        <div class="charge active col-md-3 col-sm-6 col-xs-12">
+                            <li class="active">
+                                <a href="index.html">
+                                    شحن Hotspot
+                                    <div class="circle-icon  main-icon"></div>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="withdraw col-md-3 col-sm-6 col-xs-12">
+                            <li>
+                                <a href="broadband.html">
+                                    شحن broadband
+                                    <div class="circle-icon  withdraw-icon"></div>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="moves col-md-3 col-sm-6 col-xs-12">
+                            <li>
+                                <a href="moves.html">
+                                    الحركات
+                                    <div class="circle-icon  moves-icon"></div>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="account col-md-3 col-sm-6 col-xs-12">
+                            <li>
+                                <a href="account.html">
+                                    حسابي
+                                    <div class="circle-icon  account-icon"></div>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--navbar ends -->
+        <!-- main block starts -->
+        <div class="container">
+            <div class="white-block col-md-12 col-xs-12 col-sm-12">
+                <div class="gray-bar col-md-12 col-xs-12 col-sm-12">
+                    أهلاً وسهلاً بك <span class="blue">مترو ماركت</span> في حساب الشحن  الخاص بشركة فيوجن
+                </div>
+
+
+                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+
+
+                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                        <label>رقم الحساب</label>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                        <input class="form-control" type="text" />
+                    </div>
+                    <div class="btn-container col-md-1 col-sm-2 col-xs-3 right-float">
+                        <button id="check-btn" class="my-btn">فحص</button>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="details-container col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                    <div class="label-container col-md-3 col-sm-4 col-xs-12 right-float">
+                        <label> اسم المشترك <span class="bold">محمد سعيد</span></label>
+                    </div>
+                    <div class="label-container col-md-3 col-sm-4 col-xs-12 right-float">
+                        <label>  الرصيد الحالي <span class="bold">150 شيكل </span></label>
+                    </div>
+                    <div class="label-container col-md-3 col-sm-4 col-xs-12 right-float">
+                        <label>  حالة الحساب  <span class="bold">فعال </span></label>
+                    </div>
+                </div>
+                <div class="details-container details-container2 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-3 hidden-sm hidden-xs right-float"></div>
+                    <div class="label-container col-md-3 col-sm-4 col-xs-12 right-float">
+                        <label> <span class="bold"> الرقم غير موجود</span></label>
+                    </div>
+                    <div class="btn-container col-md-1 col-sm-2 col-xs-3 right-float">
+                        <button type="button" class=" my-btn" id="m_sweetalert_demo_8">  إنشاء</button>
+                    </div>
+                </div>
+                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+
+
+                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                        <label> مبلغ الشحن</label>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                        <input class="form-control" type="text" />
+                    </div>
+                    <div class="btn-container col-md-1 col-sm-2 col-xs-3 right-float">
+                        <button id="withdraw-btn" class="my-btn">شحن</button>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="success-container">
+                        <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                        <div class="col-md-2 col-sm-4 hidden-xs right-float"></div>
+                        <div class="col-md-4 col-sm-8 col-xs-12 right-float">تمت عملية السحب بنجاح</div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="confirm-msg">
+                        <div class="col-md-1 hidden-xs  right-float"></div>
+                        <div class="col-md-2 col-sm-4 hidden-xs right-float"></div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 right-float confirm-content right-float">
+                            <span>سيتم تحويل مبلغ <span class="blue">50 شيكل</span> إلى رقم الحساب <span class="blue">1234</span></span>
+                            <button id="check-btn" class="my-btn confirm-btn">تأكيد</button>
+                            <button id="check-btn" class="my-btn cancel-btn">إلغاء</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="code-msg">
+                        <div class="col-md-1 hidden-xs  right-float"></div>
+                        <div class="col-md-2 col-sm-4 hidden-xs right-float"></div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 right-float confirm-content right-float">
+                            <input placeholder="كود التفعيل" class="form-control code-input" type="text" />
+                            <button id="check-btn" class="my-btn confirm-btn">تأكيد</button>
+                            <button id="check-btn" class="my-btn cancel-btn">إلغاء</button>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- main block ends -->
+        <div class="footer">
+            <div class="container">All right reserved. Copyright &copy; 2015</div>
+        </div>
+
+        <!-- js files -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/sweetalert2.all.js"></script>
+        <script src="assets/js/sweetalert2.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+   
+</html>

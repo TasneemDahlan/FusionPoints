@@ -1,0 +1,916 @@
+﻿<!Doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>إدارة النقاط </title>
+        <!-- css files -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/reset.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/sweetalert2.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/datatables.css" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="assets/img/whiteLogo.png" rel="icon">
+        
+    </head>
+    <body>
+
+        <!-- Modal -->
+        <div class="modal fade edit_user new_product" id="new_product" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">  إضافة Product  جديد </h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="tab-content">
+                            <form class="form new_user">
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>     Product</label>
+                                    </div>
+                                    <div class="col-md-5 col-sm-4 col-xs-4 right-float">
+                                        <select class="form-control">
+                                            <option>select</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>     Type</label>
+                                    </div>
+                                    <div class="col-md-5 col-sm-4 col-xs-4 right-float">
+                                        <select class="form-control" >
+                                            <option value="broadband">Broadband</option>
+                                            <option value="hotspot">Hotspot</option>
+                                        </select>
+                                    </div>
+                                 
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>    Cost</label>
+                                    </div>
+                                    <div class="col-md-5 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>    Markup</label>
+                                    </div>
+                                    <div class="col-md-5 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>      Sell Price</label>
+                                    </div>
+                                    <div class="col-md-5 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <button class="my-btn confirm-btn">إضافة</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade edit_user new_product account_modal" id="account_modall" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">   تفاصيل حساب النقطة </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12 new_network">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a class="new_link active" data-toggle="tab" href="#addNet">   كشف الحساب</a></li>
+                                <li class=""><a class="new_link" data-toggle="tab" href="#viewNet">   الاجماليات</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="addNet" class="tab-pane fade in active">
+                                    <div class="filter">
+                                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                            <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                                <label>     تاريخ الحركة </label>
+                                            </div>
+                                            <div class="label-container right-float">
+                                                <label class="col-md-1">   من </label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                                <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                                    <input type="text" class="form-control" placeholder="dd.mm.yyyy">
+                                                    <div class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-th"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="label-container right-float">
+                                                <label class="col-md-1">   إلى </label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                                <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                                    <input type="text" class="form-control" placeholder="dd.mm.yyyy">
+                                                    <div class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-th"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-12 col-xs-12 right-float">
+                                                <button class="search-btn">بحث</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <hr />
+                                    <div class="col-md-12 ">
+                                        <div class="move_table">
+                                            <table id="" class="table table-striped table-hover table-bordered  table-checkable  account_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            التاريخ /الوقت
+                                                        </th>
+                                                        <th>
+                                                            اسم المشترك
+                                                        </th>
+                                                        <th>
+                                                            الرصيد
+                                                        </th>
+                                                        <th> العمولة</th>
+                                                        <th>
+                                                            نوع الحركة
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="">
+                                                            13/5/2015 <br>
+                                                            12:00 PM
+                                                        </td>
+                                                        <td>
+                                                            محمد سعيد
+                                                        </td>
+
+                                                        <td>
+                                                            50 شيكل
+                                                        </td>
+                                                        <td> 50% </td>
+                                                        <td>
+                                                            شحن
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            13/5/2015 <br>
+                                                            12:00 PM
+                                                        </td>
+                                                        <td>
+                                                            محمد سعيد
+                                                        </td>
+
+                                                        <td>
+                                                            150 شيكل
+                                                        </td>
+                                                        <td> 20%</td>
+                                                        <td>
+                                                            شحن
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="viewNet" class="tab-pane">
+                                    <div class="col-md-12">
+                                        <div class="totally">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12 col-xs-12 box2">
+                                                    <div class="box3">
+                                                        <h5>
+                                                            إجمالي شحن للشركة
+                                                            <span id="companyPayment">1000</span>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="box1">
+                                                        <h5>
+                                                            رصيد الشحن المتوفر
+                                                            <span id="cBalance">500</span>
+                                                        </h5>
+                                                    </div>
+                                                    <h5 class="gray">
+                                                        إجمالي الشحن  للمشتركين
+                                                        <span id="totalCharge">500</span>
+                                                    </h5>
+                                                    <h6>
+                                                        إجمالي شحن Broadband
+                                                        <span id="totalCharge">300</span>
+                                                    </h6>
+                                                    <h6>
+                                                        إجمالي شحن Hotspot
+                                                        <span id="totalCharge">200</span>
+                                                    </h6>
+                                                    <h5 class="gray">
+                                                        إجمالي عمولات الشحن
+                                                        <span id="totalComesion">50</span>
+                                                    </h5>
+                                                    <h6>
+                                                        إجمالي عمولات Broadband
+                                                        <span id="totalCharge">30</span>
+                                                    </h6>
+                                                    <h6>
+                                                        إجمالي عمولات Hotspot
+                                                        <span id="totalCharge">20</span>
+                                                    </h6>
+                                                    <h5 class="gray">
+                                                        إجمالي التسديد  للشبكة
+                                                        <span id="toCharge">400</span>
+                                                    </h5>
+                                                    <div class="box4">
+                                                        <h5>
+                                                            المبلغ المطلوب للشركة
+                                                            <span id="companyPayment">50</span>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="clear"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- header starts -->
+        <div class="header">
+            <div class="container">
+                <img class="logo" src="assets/img/whiteLogo.png">
+                <div class="right-side">
+                    <span class="main-span hidden-xs hidden-sm"> اسم الشبكة :  <span>   شبكة 1</span></span>
+                    <span class="main-span balance"> الرصيد المتاح: <span>500 شيكل</span></span>
+                    <span class="main-span balance hidden-xs hidden-sm"> الرصيد المطلوب: <span>1000 شيكل</span></span>
+                </div>
+                <div class="left-side">
+                    <a href="##" data-toggle="tooltip" data-placement="top" title="شاشة النقطة" class="top_a"><i class="glyphicon glyphicon-refresh"></i> </a>
+                    <a href="##" data-toggle="tooltip" data-placement="top" title=" dashboard" class="top_a"><i class=" glyphicon glyphicon-stats"> </i></a>
+
+                    <a href="##" class="sign-out">خروج</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- header ends -->
+        <!--navbar starts -->
+        <div class="navbar navbar-static-top">
+            <div class="container">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollpase">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse navHeaderCollpase">
+                    <ul class="nav navbar-nav navbar-right">
+                        <div class="charge active col-md-3 col-sm-6 col-xs-12">
+                            <li class="active">
+                                <a href="points_managment.html">
+                                    نقاط البيع
+                                    <div class="circle-icon  network-icon"></div>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="charge col-md-3 col-sm-6 col-xs-12">
+                            <li class="">
+                                <a href="users_managment.html">
+                                    إدارة المشتركين
+                                    <div class="circle-icon  main-icon"></div>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="account col-md-3 col-sm-6 col-xs-12">
+                            <li>
+                                <a href="points_voucher.html">
+                                    سند قبض/صرف
+                                    <div class="circle-icon  doller-icon"></div>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="moves col-md-3 col-sm-6 col-xs-12">
+                            <li>
+                                <a href="points_moves.html">
+                                    الحركات
+                                    <div class="circle-icon  moves-icon"></div>
+                                </a>
+                            </li>
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--navbar ends -->
+        <!-- main block starts -->
+        <div class="container">
+            <div class="white-block col-md-12 col-xs-12 col-sm-12">
+                <div class="col-md-12 new_network">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a class="new_link active" data-toggle="tab" href="#addPoints">إضافة نقطة بيع</a></li>
+                        <li class=""><a class="new_link" data-toggle="tab" href="#viewPoints">  عرض النقاط</a></li>
+                        <li class=""><a class="new_link" data-toggle="tab" href="#withdrowPoints">  شحن رصيد</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="addPoints" class="tab-pane fade in active">
+                            <form class="form">
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>  اسم النقطة</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>   الايميل</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>   اسم المستخدم</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>   كلمة المرور</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>     اسم صاحب النقطة</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>   رقم الموبايل</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>    المدينة</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <select class="form-control">
+                                            <option>select</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>    العنوان</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <input class="form-control" type="text" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-2 hidden-sm hidden-xs right-float"></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 right-float">
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" checked>فعال</label>
+                                        </div>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio">غير فعال</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 right-float">
+                                        <div class="form-check col-md-6">
+                                            <input class="form-check-input" type="checkbox" id="borodband">
+                                            <label class="form-check-label" for="defaultCheck1" checked>
+                                                Broadband
+                                            </label>
+                                            <div class="broadbanddiv" style="display:none">
+                                                <input class="form-control" placeholder="عمولةالbroadband" />
+                                            </div>
+                                        </div>
+                                        <div class="form-check col-md-6">
+                                            <input class="form-check-input" type="checkbox"  id="hotspot">
+                                            <label class="form-check-label" for="defaultCheck2">
+                                                Hotspot
+                                            </label>
+                                            <div class="hotspotdiv" style="display:none">
+                                                <input class="form-control" placeholder=" عمولةال hotspot" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button class="my-btn confirm-btn add_btn" type="button">إضافة</button>
+                                </div>
+                            </form>
+                            <div class="clear"></div>
+                            <div class="col-md-12 product_div" style="display:none">
+                                <div class="products_table">
+                                    <table class="table table-striped table-hover table-bordered  table-checkable  product_table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Product
+                                                </th>
+                                                <th>
+                                                    Type
+                                                </th>
+                                                <th>
+                                                    Cost
+                                                </th>
+                                                <th>
+                                                    Markup/Markdown
+                                                </th>
+                                                <th>
+                                                    Sell price
+                                                </th>
+                                                <th>
+                                                    actions
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>  30MG  </td>
+                                                <td>  Hotspot </td>
+                                                <td> 40 LIS </td>
+                                                <td>  50% </td>
+                                                <td> 20LIS</td>
+                                                <td>
+                                                    <div class="actions">
+                                                        <a href="#" data-toggle="tooltip" title="edit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                        <a href="#" data-toggle="tooltip" title="delete"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>  3MG  </td>
+                                                <td>  BroadBand </td>
+                                                <td> 40 LIS </td>
+                                                <td>  50% </td>
+                                                <td> 20LIS</td>
+                                                <td>
+                                                    <div class="actions">
+                                                        <a href="#" data-toggle="tooltip" title="edit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                        <a href="#" data-toggle="tooltip" title="delete"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                                        <a href="#" data-toggle="modal" data-target="#new_product"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                    <div class="col-12">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button class="my-btn confirm-btn" style=" margin-left: 1em;">حفظ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="viewPoints" class="tab-pane fade">
+                            <form class="form search_network">
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>  اسم النقطة</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <select class="form-control">
+                                            <option>select</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                               
+                                    <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                        <label>    المدينة</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                        <select class="form-control">
+                                            <option>select</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <label class="label-container col-md-2 col-sm-4 col-xs-5 right-float">من</label>
+                                    <div class="col-md-3 col-sm-6 col-xs-12 right-float">
+                                        <input placeholder="dd/mm/yyyy" type="text" class="date" />
+                                    </div>
+                                    <label class="label-container col-md-2 col-sm-4 col-xs-5 right-float">إلى</label>
+                                    <div class="col-md-3 col-sm-6 col-xs-12 right-float">
+                                        <input placeholder="dd/mm/yyyy" type="text" class="date" />
+                                    </div>
+                                </div>
+                                <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-2 hidden-sm hidden-xs right-float"></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 right-float">
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" checked>فعال</label>
+                                        </div>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio">غير فعال</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4 right-float">
+                                        <span class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Broadband
+                                            </label>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                            <label class="form-check-label" for="defaultCheck2">
+                                                Hotspot
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button class="my-btn confirm-btn">بحث </button>
+                                </div>
+                            </form>
+                            <div class="clear"></div>
+                            <div class="col-md-12 ">
+                                <div class="table-responsive table-bordered  network_table">
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    اسم النقطة
+                                                </th>
+                                                <th>
+                                                    صاحب النقطة
+                                                </th>
+                                                <th>
+                                                    الرصيد الحالي
+                                                </th>
+                                                <th>
+                                                    المدينة
+                                                </th>
+                                                <th>
+                                                    العنوان
+                                                </th>
+                                                <th>
+                                                    حالة النقطة
+                                                </th>
+                                                <th>
+                                                    الإجراءات
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>  شبكة mix  </td>
+                                                <td> محمد سعيد </td>
+                                                <td> 50 شيكل </td>
+                                                <td>  غزة </td>
+                                                <td>  شارع الجلاء- مفترق عبد العال</td>
+                                                <td class="text-success">  فعالة </td>
+                                                <td>
+                                                    <div class="actions">
+                                                        <a href="#" data-toggle="tooltip" title="تعديل"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>  شبكة mix  </td>
+                                                <td> محمد سعيد </td>
+                                                <td> 50 شيكل </td>
+                                                <td>  غزة </td>
+                                                <td>  شارع الجلاء- مفترق عبد العال</td>
+                                                <td class="text-success">  فعالة </td>
+                                                <td>
+                                                    <div class="actions">
+                                                        <a href="#" data-toggle="tooltip" title="تعديل"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>  شبكة mix  </td>
+                                                <td> محمد سعيد </td>
+                                                <td> 50 شيكل </td>
+                                                <td>  غزة </td>
+                                                <td>  شارع الجلاء- مفترق عبد العال</td>
+                                                <td class="text-danger">  غير فعالة </td>
+                                                <td>
+                                                    <div class="actions">
+                                                        <a href="#" data-toggle="tooltip" title="تعديل"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                                        <a href="#account_modall" data-toggle="modal">
+                                                            <span class="glyphicon glyphicon glyphicon-eye-open" aria-hidden="true" data-toggle="tooltip" title=" إظهار كشف الحساب"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="withdrowPoints" class="tab-pane fade">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a class="new_link active" data-toggle="tab" href="#charge">  شحن نقطة</a></li>
+                                <li class=""><a class="new_link" data-toggle="tab" href="#chargeAccount">   مراجعة حركات الشحن</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div id="charge" class="tab-pane fade in active">
+                                    <form>
+                                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                                            <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                                <label>  اسم النقطة</label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                                <select class="form-control">
+                                                    <option>select</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class=" col-md-12 col-sm-12 col-xs-12 network_info">
+                                            <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                                            <div class="label-container col-md-3 col-sm-4 col-xs-12 right-float">
+                                                <label> اسم النقطة <span class="bold"> نقطة  mix  للانترنت</span></label>
+                                            </div>
+                                            <div class="label-container col-md-3 col-sm-4 col-xs-12 right-float">
+                                                <label>  الرصيد الحالي <span class="bold">150 شيكل </span></label>
+                                            </div>
+                                            <div class="label-container col-md-3 col-sm-4 col-xs-12 right-float">
+                                                <label>  حالة الحساب  <span class="bold">فعال </span></label>
+                                            </div>
+                                        </div>
+                                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                                            <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                                <label>   العملية</label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                                <select class="form-control">
+                                                    <option>شحن</option>
+                                                    <option>سحب</option>
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                                            <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                                <label> الباقة </label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 hidden-xs right-float">
+                                                <input class="form-control" id="" disabled type="text" />
+                                            </div>
+                                            <div class="hidden-md hidden-lg hidden-sm col-xs-4 right-float">
+                                                <input class="form-control" type="text" />
+                                            </div>
+                                            <div class="btn-container col-md-1 col-sm-2 col-xs-3 right-float">
+                                                <button id="charge-btn" class="my-btn">شحن</button>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12" id="success-container">
+                                                <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                                                <div class="col-md-2 col-sm-4 hidden-xs right-float"></div>
+                                                <div class="col-md-4 col-sm-8 col-xs-12 right-float">تمت عملية الشحن بنجاح</div>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-12" id="confirm-msg">
+                                                <div class="col-md-1 hidden-xs  right-float"></div>
+                                                <div class="col-md-2 col-sm-4 hidden-xs right-float"></div>
+                                                <div class="col-md-4 col-sm-6 col-xs-12 right-float confirm-content right-float">
+                                                    <span>سيتم تحويل مبلغ <span class="blue">50 شيكل</span> إلى  شبكة <span class="blue">mix  للانترنت</span></span>
+                                                    <button id="check-btn" class="my-btn confirm-btn">تأكيد</button>
+                                                    <button id="check-btn" class="my-btn cancel-btn">إلغاء</button>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-md-1 hidden-sm hidden-xs right-float"></div>
+                                            <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                                <label> مبلغ السحب</label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 hidden-xs right-float">
+                                                <input class="form-control" id="" disabled type="text" />
+                                            </div>
+                                            <div class="hidden-md hidden-lg hidden-sm col-xs-4 right-float">
+                                                <input class="form-control" type="text" />
+                                            </div>
+                                            <div class="btn-container col-md-1 col-sm-2 col-xs-3 right-float">
+                                                <button id="charge-btn" class="my-btn">سحب</button>
+                                            </div>
+
+                                            <div class="clear"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="chargeAccount" class="tab-pane fade">
+                                    <div class="filter">
+                                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                            <div class="label-container col-md-2 col-sm-4 col-xs-5 right-float">
+                                                <label>  اسم النقطة</label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                                <select class="form-control">
+                                                    <option>select</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-container col-md-12 col-sm-12 col-xs-12">
+                                            <div class="label-container col-md-1 col-sm-4 col-xs-5 right-float">
+                                                <label>    التاريخ   </label>
+                                            </div>
+                                            <div class="label-container right-float">
+                                                <label class="col-md-1">   من </label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                                <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                                    <input type="text" class="form-control" placeholder="dd.mm.yyyy">
+                                                    <div class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-th"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="label-container right-float">
+                                                <label class="col-md-1">   إلى </label>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 right-float">
+                                                <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                                    <input type="text" class="form-control" placeholder="dd.mm.yyyy">
+                                                    <div class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-th"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-12 col-xs-12 right-float">
+                                                <button class="search-btn">بحث</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <hr />
+                                    <div class="col-md-12 ">
+                                        <div class="move_table">
+                                            <table id="" class="table table-striped table-hover table-bordered  table-checkable  account_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            التاريخ /الوقت
+                                                        </th>
+                                                        <th>
+                                                             النقطة
+                                                        </th>
+                                                        <th>
+                                                            الرصيد
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="">
+                                                            13/5/2015 <br>
+                                                            12:00 PM
+                                                        </td>
+                                                        <td>
+                                                            محمد سعيد
+                                                        </td>
+                                                        <td>
+                                                            50 شيكل
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            13/5/2015 <br>
+                                                            12:00 PM
+                                                        </td>
+                                                        <td>
+                                                            محمد سعيد
+                                                        </td>
+                                                        <td>
+                                                            150 شيكل
+                                                        </td>
+                                                        
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <!-- main block ends -->
+        <div class="footer">
+            <div class="container">All right reserved. Copyright &copy; 2020</div>
+        </div>
+
+        <!-- js files -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/sweetalert2.all.js"></script>
+        <script src="assets/js/sweetalert2.js"></script>
+        <script src="assets/js/datatables.js"></script>
+        <script src="assets/js/main.js"></script>
+
+
+        <script>
+            $(".add_btn").click(function () {
+                $(".product_div").show();
+            });
+
+
+
+            $(document).ready(function () {
+                $('.product_table').DataTable();
+            });
+            $(document).ready(function () {
+                $('.account_table').DataTable();
+            });
+
+          
+
+           
+            $('#borodband').change(function () {
+                $('.broadbanddiv').show();
+            });
+            $('#hotspot').change(function () {
+                $('.hotspotdiv').toggle();
+            });
+            
+        </script>
+    </body>
+   
+    
+    
+</html>
